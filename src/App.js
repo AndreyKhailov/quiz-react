@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { questionsBase } from './questionsBase';
+import ShowScore from './component/showScore/showScore';
+import Header from './component/header/header';
 
-function App() {
+
+function App() {  
+
+  const [score, setScore] = useState(0); // Колличество правильных ответов
+  const [isShowScore, setShowScore] = useState(false); // Показывается результат в конце теста
+  const [currentAnswer, setCurrentAnswer] = useState([]); // Храняться ответы пользователя
+  const [currentQuestion, setCurrentQuestion] = useState(0); // Номер вопроса
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      { 
+        !isShowScore
+        ? <Header score={score}
+                  setScore={setScore} 
+                  setShowScore={setShowScore}
+                  questionsBase={questionsBase}
+                  currentAnswer={currentAnswer}
+                  setCurrentAnswer={setCurrentAnswer}
+                  currentQuestion={currentQuestion}
+                  setCurrentQuestion={setCurrentQuestion}
+          />
+        : 
+          <ShowScore  score={score}
+                      setScore={setScore}
+                      currentAnswer={currentAnswer}
+                      questionsBase={questionsBase}
+                      setShowScore={setShowScore}
+                      setCurrentQuestion={setCurrentQuestion}
+          />
+      }
     </div>
   );
 }
