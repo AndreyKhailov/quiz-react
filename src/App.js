@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { questionsBase } from './questionsBase';
 import ShowScore from './component/showScore/showScore';
-import Header from './component/header/header';
+import Main from './component/main/main';
 
 
 function App() {  
@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       { 
         !isShowScore
-        ? <Header score={score}
+        ? <Main score={score}
                   setScore={setScore} 
                   setShowScore={setShowScore}
                   questionsBase={questionsBase}
