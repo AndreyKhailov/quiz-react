@@ -1,5 +1,5 @@
 import React from 'react';
-import './main.module.css';
+import s from './main.module.css';
 
 
 function Main({
@@ -26,18 +26,18 @@ function Main({
     }
 
     return (   
-        <main className="main">
+        <main className={s.main}>
           <h1>Тест на знание React JS</h1>
-          <section className="question">
-            <p className="question__num">Вопрос {currentQuestion + 1} / {questionsBase.length}</p>
-            <p className="question__text">{ questionsBase[currentQuestion].questionText }</p>
+          <section className={s.question}>
+            <p className={s.question__num}>Вопрос {currentQuestion + 1} / {questionsBase.length}</p>
+            <p className={s.question__text}>{ questionsBase[currentQuestion].questionText }</p>
           </section>
-          <section className="answer__options">
+          <section className={s.answer__options}>
             {
               questionsBase[currentQuestion].answersOption.map((item, index) => (
                 <button 
                   key={index}
-                  className="answer__options-btn"
+                  className={s.answer__btn}
                   onClick={ (e) => handleAnswer(e, item) }
                 >
                   {item.answerText}

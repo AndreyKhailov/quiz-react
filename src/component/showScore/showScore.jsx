@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './showScore.module.css'
+import s from './showScore.module.css'
 import Details from '../details/details'
 
 
@@ -24,14 +24,14 @@ function ShowScore({
             {
                 !isShowDetails
                 ?
-                    <section className="score">
+                    <section className={s.score}>
                         <span>Правильных ответов {score} / {questionsBase.length}</span>
-                        <button className="score__details-btn"
+                        <button className={s.details__btn}
                                 onClick={() => handleDetails()}
                         >
                             Подробнее
                         </button>
-                        <button className="score__restart-btn"
+                        <button className={s.restart__btn}
                                 onClick={() => handleRestart()}
                         >
                             Начать заново

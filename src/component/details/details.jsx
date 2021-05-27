@@ -1,5 +1,5 @@
 import React from 'react';
-import './details.module.css'
+import s from './details.module.css'
 
 function Details({
 
@@ -16,10 +16,10 @@ function Details({
   };  
 
   return (
-    <section className="details">
-      <table className="details__table">
-        <caption className="details__table-title">Результат теста</caption>
-        <thead className="details__table-head">
+    <section className={s.details}>
+      <table className={s.table}>
+        <caption className={s.table__title}>Результат теста</caption>
+        <thead className={s.table__head}>
           <tr>
             <th>№</th>
             <th>Вопрос</th>
@@ -27,7 +27,7 @@ function Details({
             <th>Правильный ответ</th>
           </tr>
         </thead>
-        <tbody className="details__table-body">
+        <tbody className={s.table__body}>
           <td>
             {
               questionsBase.map((index) => (
@@ -53,9 +53,9 @@ function Details({
             }      
           </td>
         </tbody>
-        <tfoot className="details__table-footer">
+        <tfoot className={s.table__footer}>
           <p>Правильных ответов: {score} / {questionsBase.length}</p>
-          <button className="details__back-btn"
+          <button className={s.btn__back}
                   onClick={() => handleToBack()}
           >
             Назад
