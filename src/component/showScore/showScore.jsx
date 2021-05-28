@@ -25,7 +25,15 @@ function ShowScore({
                 !isShowDetails
                 ?
                     <section className={s.score}>
-                        <span>Правильных ответов {score} / {questionsBase.length}</span>
+                        <h2 className={s.score__title}>Правильных ответов:
+                            <span className={
+                                (score === questionsBase.length && s.score__full) // Если все правильные ответы, число подсвечивается зеленым
+                                || (score ? s.score__count : s.score__null)       // Если нет правильных ответов - красным
+                            }
+                            >{score}
+                            </span>/ 
+                            <span className={s.score__full}>{questionsBase.length}</span>
+                        </h2>
                         <button className={s.details__btn}
                                 onClick={() => handleDetails()}
                         >

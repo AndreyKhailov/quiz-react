@@ -14,6 +14,7 @@ function App() {
   
   return (
     <div className="App">
+      <div className="wrapper">
       { 
         !isShowScore
         ? <Main score={score}
@@ -34,6 +35,7 @@ function App() {
                       setCurrentQuestion={setCurrentQuestion}
           />
       }
+      </div>
     </div>
   );
 }

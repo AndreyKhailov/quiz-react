@@ -27,9 +27,9 @@ function Main({
 
     return (   
         <main className={s.main}>
-          <h1>Тест на знание React JS</h1>
+          <h1 className={s.main__title}>Тест на знание React JS</h1>   
           <section className={s.question}>
-            <p className={s.question__num}>Вопрос {currentQuestion + 1} / {questionsBase.length}</p>
+            <span className={s.question__num}>Вопрос {currentQuestion + 1}</span> / {questionsBase.length}:
             <p className={s.question__text}>{ questionsBase[currentQuestion].questionText }</p>
           </section>
           <section className={s.answer__options}>

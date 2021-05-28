@@ -1,7 +1,14 @@
 .App {
-  text-align: center;
+  background-image: url("image/bg-default-02.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.App-link {
-  color: #61dafb;
-}
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+  color: #1c1c1c;
+  }
