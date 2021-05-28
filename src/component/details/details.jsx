@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './details.module.css'
+import { uniqueKey } from '../../uniqueKey';
 
 function Details({
 
@@ -30,25 +31,25 @@ function Details({
         <tbody className={s.table__body}>
           <td>
             {
-              questionsBase.map((index) => (
-                <tr key={index}>{ (number()) }</tr> )) // Порядковый номер вопроса
+              questionsBase.map(() => (
+                <tr key={ uniqueKey() }>{ (number()) }</tr> )) // Порядковый номер вопроса
             }
           </td><td>
             {
-              questionsBase.map((question, index) => (
-                <tr key={index}>{question.questionText}</tr> )) // Текст вопроса
+              questionsBase.map((question) => (
+                <tr key={ uniqueKey() }>{question.questionText}</tr> )) // Текст вопроса
             }
           </td><td>
             {
-              currentAnswer.map((answerUser, index) => (
-                <tr key={index}>{answerUser.answerText}</tr> )) // Выводится ответ пользователя 
+              currentAnswer.map((answerUser) => (
+                <tr key={ uniqueKey() }>{answerUser.answerText}</tr> )) // Выводится ответ пользователя 
             }            
           </td><td>
             {
-              questionsBase.map((answerTrue, index) =>        // В базе данных перебирается каждый элемент массива
+              questionsBase.map((answerTrue) =>        // В базе данных перебирается каждый элемент массива
                 answerTrue.answersOption.map((item) =>        // В каждом элементе перебирается массив ответов(answersOption)
                   item.isCorrect && (                         // Делается проверка: какой из ответов правильный
-                    <tr key={index}>{item.answerText}</tr>    // В таблицу выводится правильный ответ
+                    <tr key={ uniqueKey() }>{item.answerText}</tr>    // В таблицу выводится правильный ответ
                 )))
             }      
           </td>
@@ -56,7 +57,7 @@ function Details({
         <tfoot className={s.table__footer}>
           <p>Правильных ответов: {score} / {questionsBase.length}</p>
           <button className={s.btn__back}
-                  onClick={() => handleToBack()}
+                  onClick={ () => handleToBack() }
           >
             Назад
           </button>

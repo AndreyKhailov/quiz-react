@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './main.module.css';
+import { uniqueKey } from '../../uniqueKey';
 
 
 function Main({
@@ -34,9 +35,9 @@ function Main({
           </section>
           <section className={s.answer__options}>
             {
-              questionsBase[currentQuestion].answersOption.map((item, index) => (
+              questionsBase[currentQuestion].answersOption.map((item) => (
                 <button 
-                  key={index}
+                  key={ uniqueKey() }
                   className={s.answer__btn}
                   onClick={ (e) => handleAnswer(e, item) }
                 >
