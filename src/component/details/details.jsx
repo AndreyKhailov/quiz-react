@@ -29,40 +29,43 @@ function Details({
           </tr>
         </thead>
         <tbody className={s.table__body}>
-          <td>
-            {
-              questionsBase.map(() => (
-                <tr key={ uniqueKey() }>{ (number()) }</tr> )) // Порядковый номер вопроса
-            }
-          </td><td>
-            {
-              questionsBase.map((question) => (
-                <tr key={ uniqueKey() }>{question.questionText}</tr> )) // Текст вопроса
-            }
-          </td><td>
-            {
-              currentAnswer.map((answerUser) => (
-                <tr key={ uniqueKey() }>{answerUser.answerText}</tr> )) // Выводится ответ пользователя 
-            }            
-          </td><td>
-            {
-              questionsBase.map((answerTrue) =>        // В базе данных перебирается каждый элемент массива
-                answerTrue.answersOption.map((item) =>        // В каждом элементе перебирается массив ответов(answersOption)
-                  item.isCorrect && (                         // Делается проверка: какой из ответов правильный
-                    <tr key={ uniqueKey() }>{item.answerText}</tr>    // В таблицу выводится правильный ответ
-                )))
-            }      
-          </td>
+          <tr>
+            <td>
+              {
+                questionsBase.map( () => (
+                  <div key={ uniqueKey() }>{ number() }</div> )) // Порядковый номер вопроса
+              }
+            </td><td>
+              {
+                questionsBase.map((question) => (
+                  <div key={ uniqueKey() }>{question.questionText}</div> )) // Текст вопроса
+              }
+            </td><td>
+              {
+                currentAnswer.map((answerUser) => (
+                  <div key={ uniqueKey() }>{answerUser.answerText}</div> )) // Выводится ответ пользователя 
+              }            
+            </td><td>
+              {
+                questionsBase.map((answerTrue) =>        // В базе данных перебирается каждый элемент массива
+                  answerTrue.answersOption.map((item) =>        // В каждом элементе перебирается массив ответов(answersOption)
+                    item.isCorrect && (                         // Делается проверка: какой из ответов правильный
+                      <div key={ uniqueKey() }>{item.answerText}</div>    // В таблицу выводится правильный ответ
+                  )))
+              }      
+            </td>
+          </tr>
         </tbody>
-        <tfoot className={s.table__footer}>
-          <p>Правильных ответов: {score} / {questionsBase.length}</p>
-          <button className={s.btn__back}
-                  onClick={ () => handleToBack() }
-          >
-            Назад
-          </button>
+        <tfoot className={s.table__footer} >
+          <tr><td colSpan={4}>
+            Правильных ответов: {score} / {questionsBase.length}
+          </td></tr>
         </tfoot>
       </table>
+      <button className={s.btn__back}
+              onClick={ () => handleToBack() }>
+        Назад
+      </button>
     </section>
   );
 }
