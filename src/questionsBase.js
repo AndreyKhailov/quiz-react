@@ -38,8 +38,8 @@ export const questionsBase = [
     {
         questionText: 'Всё view перерисовывает React при изминении props или состояния?',
         answersOption: [
-            { answerText: 'Да', isCorrect: true },
-            { answerText: 'Нет', isCorrect: false },
+            { answerText: 'Да', isCorrect: false },
+            { answerText: 'Нет', isCorrect: true },
             { answerText: 'И да, и нет', isCorrect: false },
             { answerText: 'Не знаю', isCorrect: false }
         ],        
