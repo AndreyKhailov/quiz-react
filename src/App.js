@@ -32,6 +32,7 @@ function App() {
                       currentAnswer={currentAnswer}
                       questionsBase={questionsBase}
                       setShowScore={setShowScore}
+                      setCurrentAnswer={setCurrentAnswer}
                       setCurrentQuestion={setCurrentQuestion}
           />
       }

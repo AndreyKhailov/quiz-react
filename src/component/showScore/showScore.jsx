@@ -5,8 +5,8 @@ import Details from '../details/details'
 
 function ShowScore({ 
     score, setScore, questionsBase, 
-    setShowScore, currentAnswer,
-    setCurrentQuestion,
+    currentAnswer, setCurrentAnswer,
+    setShowScore, setCurrentQuestion,
 }) {
     const [isShowDetails, setShowDetails] = useState(false)
 
@@ -14,11 +14,14 @@ function ShowScore({
         setShowDetails(true);
     }
 
-    function handleRestart() { // Прохождение теста с самого начала
+    function handleRestart() { /* Прохождение теста с самого начала
+                                  State переходит в состояние по умолчанию */
         setScore(0);
         setShowScore(false);
         setCurrentQuestion(0);
+        setCurrentAnswer([]);
     }
+    
     return (
         <div>
             {
