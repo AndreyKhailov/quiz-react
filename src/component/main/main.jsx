@@ -30,8 +30,8 @@ function Main({
         <main className={s.main}>
           <h1 className={s.main__title}>Тест на знание React JS</h1>   
           <section className={s.question}>
-            <span className={s.question__num}>Вопрос {currentQuestion + 1}</span> / {questionsBase.length}:
             <p className={s.question__text}>{ questionsBase[currentQuestion].questionText }</p>
+            <span className={s.question__num}>Вопрос {currentQuestion + 1} / {questionsBase.length}</span>
           </section>
           <section className={s.answer__options}>
             {

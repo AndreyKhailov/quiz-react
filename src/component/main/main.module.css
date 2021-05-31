@@ -9,8 +9,9 @@
   width: 550px;
   min-height: 200px;
   display: grid;
-  grid-template-columns: 55% 45%;
+  grid-template-columns: 55% 42%;
   grid-template-rows: auto;
+  column-gap: 3%;
   grid-template-areas:
     'title title'
     'question answers'
@@ -35,6 +36,9 @@
 
 .question {
   grid-area: question;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .answer__options {
@@ -43,12 +47,19 @@
   flex-direction: column;
 }
 
+.question__num,
+.question__text {
+  color: rgb(255,255,255);
+  text-shadow: 1px 1px 5px #1c1c1c;
+}
+
 .question__num {
-  font-size: calc(18px + 1vmin);
+  font-size: calc(12px + 1vmin);
 }
 
 .question__text {
-  font-size: calc(20px + 1vmin);
+  margin: 0;
+  font-size: calc(16px + 1vmin);
 }
 
 .answer__btn {
