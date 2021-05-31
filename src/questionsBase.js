@@ -11,7 +11,7 @@ export const questionsBase = [
     {
         questionText: 'React JS - это',
         answersOption: [
-            { answerText: 'Язык программирования', isCorrect: false },
+            { answerText: 'База данных', isCorrect: false },
             { answerText: 'ФреймВорк', isCorrect: false },
             { answerText: 'Библиотека', isCorrect: true },
             { answerText: 'Все ответы правильны', isCorrect: false }
