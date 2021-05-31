@@ -1,38 +1,56 @@
 export const questionsBase = [
     {
+        questionText: 'React JS разработан компанией:',
+        answersOption: [
+            { answerText: 'Facebook', isCorrect: true },
+            { answerText: 'Google', isCorrect: false },
+            { answerText: 'Amazon', isCorrect: false },
+            { answerText: 'РосЭнергоСбыт', isCorrect: false }
+        ],        
+    },
+    {
         questionText: 'React JS - это',
         answersOption: [
-            { answerText: 'язык программирования', isCorrect: false },
-            { answerText: 'фреймВорк', isCorrect: true },
-            { answerText: 'библиотека', isCorrect: false },
-            { answerText: 'все выше перечисленные ответы', isCorrect: false }
+            { answerText: 'Язык программирования', isCorrect: false },
+            { answerText: 'ФреймВорк', isCorrect: false },
+            { answerText: 'Библиотека', isCorrect: true },
+            { answerText: 'Все ответы правильны', isCorrect: false }
         ],        
     },
     {
-        questionText: 'javaScript - это',
+        questionText: 'Какую часть шаблона проектирования MVC реализует React?',
         answersOption: [
-            { answerText: 'язык программирования', isCorrect: true },
-            { answerText: 'фреймВорк', isCorrect: false },
-            { answerText: 'библиотека', isCorrect: false },
-            { answerText: 'все выше перечисленные ответы', isCorrect: false }
+            { answerText: 'Полноценную MVC', isCorrect: false },
+            { answerText: '"Model" часть', isCorrect: false },
+            { answerText: '"Controller" часть', isCorrect: false },
+            { answerText: '"View" часть', isCorrect: true }
         ],        
     },
     {
-        questionText: '2 React JS - это',
+        questionText: 'Что используется в React для рендеринга HTML?',
         answersOption: [
-            { answerText: 'язык программирования', isCorrect: false },
-            { answerText: 'фреймВорк', isCorrect: true },
-            { answerText: 'библиотека', isCorrect: false },
-            { answerText: 'все выше перечисленные ответы', isCorrect: false }
+            { answerText: 'HBS', isCorrect: false },
+            { answerText: 'JSX', isCorrect: true },
+            { answerText: 'EJS', isCorrect: false },
+            { answerText: 'NASA', isCorrect: false }
         ],        
     },
     {
-        questionText: '2 javaScript - это',
+        questionText: 'Всё view перерисовывает React при изминении props или состояния?',
         answersOption: [
-            { answerText: 'язык программирования', isCorrect: true },
-            { answerText: 'фреймВорк', isCorrect: false },
-            { answerText: 'библиотека', isCorrect: false },
-            { answerText: 'все выше перечисленные ответы', isCorrect: false }
+            { answerText: 'Да', isCorrect: true },
+            { answerText: 'Нет', isCorrect: false },
+            { answerText: 'И да, и нет', isCorrect: false },
+            { answerText: 'Не знаю', isCorrect: false }
+        ],        
+    },
+    {
+        questionText: 'Какой атрибут обязателен при рендеринге компонентов списка?',
+        answersOption: [
+            { answerText: 'index', isCorrect: false },
+            { answerText: 'data-index', isCorrect: false },
+            { answerText: 'id', isCorrect: false },
+            { answerText: 'key', isCorrect: true },
         ],        
     },
 ]
