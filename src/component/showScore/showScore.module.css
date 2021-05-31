@@ -23,7 +23,7 @@
 }
 
 .score__full {
-    color: rgb(0, 255, 0);
+    color: rgb(0, 225, 0);
 }
 
 .details__btn,
@@ -42,7 +42,7 @@
 
 .details__btn:hover,
 .restart__btn:hover {
-  background-color: rgb(0,175,152);
+  background-color: #1e88e5;
   transition: all 0.3s;
   color: #fff;
 }

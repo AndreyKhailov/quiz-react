@@ -32,7 +32,7 @@ function Details({
           <tr>
             <td>
               {
-                questionsBase.map( () => (
+                questionsBase.map(() => (
                   <div key={ uniqueKey() }>{ number() }</div> )) // Порядковый номер вопроса
               }
             </td><td>
@@ -43,7 +43,13 @@ function Details({
             </td><td>
               {
                 currentAnswer.map((answerUser) => (
-                  <div key={ uniqueKey() }>{answerUser.answerText}</div> )) // Выводится ответ пользователя 
+                  <div key={ uniqueKey() }
+                       className={answerUser.isCorrect
+                                  ? s.answer__right
+                                  : s.answer__noRight}
+                  >
+                    {answerUser.answerText}
+                  </div> )) // Выводится ответ пользователя 
               }            
             </td><td>
               {
@@ -56,9 +62,16 @@ function Details({
             </td>
           </tr>
         </tbody>
-        <tfoot className={s.table__footer} >
-          <tr><td colSpan={4}>
-            Правильных ответов: {score} / {questionsBase.length}
+        <tfoot className={s.table__footer}>
+          <tr><td colSpan="4">
+            Правильных ответов:
+              <span className={
+                  (score === questionsBase.length && s.score__full) // Если все правильные ответы, число подсвечивается зеленым
+                || (score ? s.score__count : s.score__null)         // Если нет правильных ответов - красным
+              }
+              >{score}
+              </span>/ 
+              <span className={s.score__full}>{questionsBase.length}</span>
           </td></tr>
         </tfoot>
       </table>
