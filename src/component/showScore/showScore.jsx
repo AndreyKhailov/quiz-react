@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import s from './showScore.module.css'
 import Details from '../details/details'
+import Button from '../../assets/button/button'
 
 
 function ShowScore({ 
@@ -37,16 +38,12 @@ function ShowScore({
                             </span>/ 
                             <span className={s.score__full}>{questionsBase.length}</span>
                         </h2>
-                        <button className={s.details__btn}
-                                onClick={() => handleDetails()}
-                        >
+                        <Button handleClick={handleDetails}>
                             Подробнее
-                        </button>
-                        <button className={s.restart__btn}
-                                onClick={() => handleRestart()}
-                        >
+                        </Button>
+                        <Button handleClick={handleRestart}>
                             Начать заново
-                        </button>
+                        </Button>
                     </section>
                 : 
                     <Details score={score}

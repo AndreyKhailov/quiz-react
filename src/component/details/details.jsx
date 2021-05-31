@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './details.module.css'
+import Button from '../../assets/button/button'
 import { uniqueKey } from '../../uniqueKey';
 
 function Details({
@@ -75,10 +76,12 @@ function Details({
           </td></tr>
         </tfoot>
       </table>
-      <button className={s.btn__back}
-              onClick={ () => handleToBack() }>
+      <Button 
+        handleClick={handleToBack}
+        style={s.btn}
+      >
         Назад
-      </button>
+      </Button>
     </section>
   );
 }

@@ -1,5 +1,5 @@
-import React from 'react';
 import s from './main.module.css';
+import Button from '../../assets/button/button'
 import { uniqueKey } from '../../uniqueKey';
 
 
@@ -11,9 +11,7 @@ function Main({
 
 }) {
     
-    function handleAnswer(e, answerUser) {
-      e.preventDefault();
-
+    function handleAnswer(answerUser) {
       setCurrentAnswer([ ...currentAnswer, answerUser]); // Записывается ответ пользователя в локальный state
       answerUser.isCorrect && setScore(score+1); // Делается подсчет правильных ответов
       
@@ -36,13 +34,13 @@ function Main({
           <section className={s.answer__options}>
             {
               questionsBase[currentQuestion].answersOption.map((item) => (
-                <button 
-                  key={ uniqueKey() }
-                  className={s.answer__btn}
-                  onClick={ (e) => handleAnswer(e, item) }
+                <Button 
+                  key={uniqueKey()}
+                  handleClick={handleAnswer}
+                  param={item}
                 >
                   {item.answerText}
-                </button>
+                </Button>
               ))
             }            
           </section> 
