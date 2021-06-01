@@ -20,7 +20,7 @@ function Main({
         setCurrentQuestion(nextQuestion); 
       } else {
         setShowScore(true);  /* Переход к isShowScore котпоненту. 
-                                  (выводится последняя страница) */
+                            (выводится страница правильных ответов) */
       }
     }
 

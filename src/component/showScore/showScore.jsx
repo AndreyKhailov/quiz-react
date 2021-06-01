@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import s from './showScore.module.css'
 import Details from '../details/details'
 import Button from '../../assets/button/button'

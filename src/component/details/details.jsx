@@ -11,7 +11,7 @@ function Details({
 }) {  
 
   let num = 1;
-  function number() { return num++ }; // Вычисляется порядковый номер вопроса и выводится в таблицу
+  function number() { return num++ }; // Вычисляется порядковый номер вопроса и затем выводится в таблицу
 
   function handleToBack() { 
     setShowDetails(false) // Переход на предыдущую страницу
@@ -43,14 +43,15 @@ function Details({
               }
             </td><td>
               {
-                currentAnswer.map((answerUser) => (
+                currentAnswer.map((answerUser) => ( // Выводится ответ пользователя 
                   <div key={ uniqueKey() }
                        className={answerUser.isCorrect
                                   ? s.answer__right
                                   : s.answer__noRight}
                   >
                     {answerUser.answerText}
-                  </div> )) // Выводится ответ пользователя 
+                  </div> 
+                )) 
               }            
             </td><td>
               {

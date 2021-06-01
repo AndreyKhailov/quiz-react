@@ -17,11 +17,11 @@
     padding-right: 10px;
     font-size: calc(34px + 1vmin);
 }
-
+/** Если нет правильных ответов */
 .score__null {
     color: red;
 }
-
+/** Общее количество вопросов */
 .score__full {
     color: rgb(0, 225, 0);
 }
