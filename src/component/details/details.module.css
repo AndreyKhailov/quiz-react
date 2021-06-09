@@ -18,9 +18,13 @@
 .table th,
 .table__body div,
 .table__footer td {
-    text-align: center;
     padding: 10px;
 }
+
+.table__body td:not(:nth-child(2)) {
+    text-align: center;
+}
+
 
 .table__body td {
     padding: 0;
