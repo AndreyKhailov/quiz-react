@@ -73,8 +73,11 @@
 }
 
 .table__body td:nth-child(2) {
-    max-width: 480px;
+    max-width: 420px;
     overflow: auto;
+    /* Стилизация scroll для Mozilla */
+    scrollbar-color: rgb(120, 120, 120) rgb(60, 60, 60);     /* «цвет ползунка» «цвет полосы скроллбара» */
+    scrollbar-width: thin;
 }
 
 .table__body td:first-child {
@@ -102,7 +105,7 @@
 }
 
 .table__body td:nth-child(2)::-webkit-scrollbar-track {
-    background-color: rgb(120, 120, 120)
+    background-color: rgb(120, 120, 120);
 }
 
 .table__body td:nth-child(2)::-webkit-scrollbar-thumb {
