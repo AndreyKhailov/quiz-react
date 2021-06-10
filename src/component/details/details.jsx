@@ -1,6 +1,6 @@
 import React from 'react';
-import s from './details.module.css'
-import Button from '../../assets/button/button'
+import s from './details.module.css';
+import Button from '../../assets/button/button';
 import { uniqueKey } from '../../uniqueKey';
 
 function Details({

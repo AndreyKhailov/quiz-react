@@ -1,5 +1,5 @@
 import s from './main.module.css';
-import Button from '../../assets/button/button'
+import Button from '../../assets/button/button';
 import { uniqueKey } from '../../uniqueKey';
 
 
