@@ -9,6 +9,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* font-size: calc(8px + 1vmin); */
+  font-size: calc(8px + 1vmin);
   color: #1c1c1c;
   }

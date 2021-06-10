@@ -14,7 +14,7 @@ export const questionsBase = [
             { answerText: 'База данных', isCorrect: false },
             { answerText: 'ФреймВорк', isCorrect: false },
             { answerText: 'Библиотека', isCorrect: true },
-            { answerText: 'Все ответы правильны', isCorrect: false }
+            { answerText: 'Все правильно', isCorrect: false }
         ],        
     },
     {
