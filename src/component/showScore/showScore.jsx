@@ -1,7 +1,11 @@
 import { useState } from 'react';
+
 import s from './showScore.module.css';
+
 import Details from '../details/details';
 import Button from '../../assets/button/button';
+
+import PropTypes from 'prop-types';
 
 
 function ShowScore({ 
@@ -10,6 +14,12 @@ function ShowScore({
     setShowScore, setCurrentQuestion,
 }) {
     const [isShowDetails, setShowDetails] = useState(false);
+
+    ShowScore.propTypes = {
+        score: PropTypes.number.isRequired,
+        questionsBase: PropTypes.array,
+    }
+
 
     function handleDetails() { // Выводится подробная таблица результата теста
         setShowDetails(true);

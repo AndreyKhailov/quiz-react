@@ -1,7 +1,10 @@
 import s from './main.module.css';
+
 import Button from '../../assets/button/button';
+
 import { uniqueKey } from '../../uniqueKey';
 
+import PropTypes from 'prop-types';
 
 function Main({
     score, setScore, setShowScore,
@@ -10,6 +13,18 @@ function Main({
     setCurrentQuestion,
 
 }) {
+
+    Main.propTypes = {
+      questionsBase: PropTypes.arrayOf(PropTypes.shape(
+        {
+          questionText: PropTypes.string.isRequired,
+          answersOption: PropTypes.array.isRequired,
+        }
+      )),
+      currentQuestion: PropTypes.number.isRequired,
+      setCurrentQuestion: PropTypes.func,
+      setCurrentAnswer: PropTypes.func,
+    }
     
     function handleAnswer(answerUser) {
       setCurrentAnswer([ ...currentAnswer, answerUser]); // Записывается ответ пользователя в локальный state

@@ -1,14 +1,37 @@
 import React from 'react';
+
 import s from './details.module.css';
+
 import Button from '../../assets/button/button';
+
 import { uniqueKey } from '../../uniqueKey';
+
+import PropTypes from 'prop-types';
+
 
 function Details({
 
   score, currentAnswer,
   questionsBase, setShowDetails,
 
-}) {  
+}) {
+
+  Details.propTypes = {
+    score: PropTypes.number.isRequired,
+    currentAnswer: PropTypes.arrayOf(PropTypes.shape(
+      {
+        answerText: PropTypes.string.isRequired,
+        isCorrect: PropTypes.bool,
+      }
+    )),
+    questionsBase: PropTypes.arrayOf(PropTypes.shape(
+      {
+        questionText: PropTypes.string.isRequired,
+        answersOption: PropTypes.array.isRequired,
+      }
+    )),
+    setShowDetails: PropTypes.func.isRequired,
+  }
 
   let num = 1;
   function number() { return num++ }; // Вычисляется порядковый номер вопроса и затем выводится в таблицу
